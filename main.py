@@ -8,3 +8,4 @@ class Wallet(name, balance, traderate):
 
 firstwallet = Wallet('MyWallet', 100, 1)
 print(firstwallet.balance)
+print('maniga')
