@@ -1,4 +1,4 @@
-class Wallet(name, balance, traderate):
+class Wallet():
     def __init__(self, name, balance, traderate):
         self.name = name
         self.balance = balance * traderate
@@ -7,4 +7,4 @@ class Wallet(name, balance, traderate):
         return self.name, self.balance
 
 firstwallet = Wallet('MyWallet', 100, 1)
-print(firstwallet.balance)
+print(firstwallet.person())
