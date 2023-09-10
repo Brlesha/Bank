@@ -1,6 +1,5 @@
 class Wallet():
     def __init__(self, name, balance, traderate):
-        self.traderate = None
         self.name = name
         self.balance = balance * traderate
 
@@ -18,8 +17,6 @@ class Wallet():
 
     def __str__(self):
         return f'{self.name}: {self.balance}'
-
-
 
 class RubleWallet(Wallet):
     def __init__(self, name, balance, traderate=1):
