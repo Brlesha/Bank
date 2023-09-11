@@ -1,8 +1,7 @@
 class Wallet():
-    def __init__(self, name, balance, traderate):
-        self.traderate = None
+    def __init__(self, name, balance):
         self.name = name
-        self.balance = balance * traderate
+        self.balance = balance
 
     def __add__(self, other):
         if isinstance(other, Wallet):
@@ -16,27 +15,26 @@ class Wallet():
             new_balance = self.balance + float(other)
         return "{t} {p} руб.".format(t=new_name, p=new_balance)
 
+    def __radd__(self, other):
+        new_name = self.name
+        new_balance = self.balance + float(other)
+        return "{t} {p} руб.".format(t=new_name, p=new_balance)
+
     def __str__(self):
         return f'{self.name}: {self.balance}'
 
 
 
 class RubleWallet(Wallet):
-    def __init__(self, name, balance, traderate=1):
-        self.name = name
-        self.balance = balance * traderate
+    traderate = 1
 
 class DollarWallet(Wallet):
-    def __init__(self, name, balance, traderate=97):
-        self.name = name
-        self.balance = balance * traderate
+    traderate = 97
 
 class EuroWallet(Wallet):
-    def __init__(self, name, balance, traderate=105):
-        self.name = name
-        self.balance = balance * traderate
+    traderate = 105
 
 firstwallet = DollarWallet('MyWallet', 6)
-secondwallet = RubleWallet('OtherWallet', 200)
+secondwallet = RubleWallet('OtherWallet', 220)
 thirdwallet = EuroWallet('AnotherWallet', 3)
-print(firstwallet + secondwallet)
+print(10 + firstwallet)
