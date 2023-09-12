@@ -74,4 +74,4 @@ class EuroWallet(Wallet):
 firstwallet = DollarWallet('MyWallet', 6)
 secondwallet = RubleWallet('OtherWallet', 220)
 thirdwallet = EuroWallet('AnotherWallet', 1)
-print(2 * thirdwallet)
+print(2 * thirdwallet)''''''
