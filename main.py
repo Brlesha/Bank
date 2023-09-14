@@ -13,15 +13,13 @@ class Wallet():
     def __add__(self, other):
         """функция сложения объектов банка и сумм"""
         if isinstance(other, Wallet):
-            new_name = 'Сумарный баланс счетов {s} и {o}'.format(s=self.name, o=other.name)
             if self.traderate <= other.traderate:
-                new_balance = self.balance + other.balance * other.traderate
+                self.balance = self.balance + other.balance * other.traderate
             else:
-                new_balance = self.balance + other.balance / self.traderate
+                self.balance = self.balance + other.balance / self.traderate
         else:
-            new_name = self.name
-            new_balance = self.balance + float(other)
-        return "{t} {p} {c}".format(t=new_name, p=new_balance, c = self.currency)
+            self.balance = self.balance + float(other)
+        return self
 
     def __radd__(self, other):
         """функция сложения справа"""
@@ -109,9 +107,8 @@ firstwallet = DollarWallet('MyWallet', 6)
 secondwallet = RubleWallet('OtherWallet', 220)
 thirdwallet = EuroWallet('AnotherWallet', 1)
 
-"""if EuroWallet('A', 2) == RubleWallet('B', 140):
+"""if EuroWallet('A', 2) == EuroWallet('B', 1) + 1:
     print("Хайп")
 else:
     print("Кринж")"""
 
-print(DollarWallet("Q", 150) + thirdwallet)
