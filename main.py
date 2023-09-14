@@ -106,9 +106,3 @@ class EuroWallet(Wallet):
 firstwallet = DollarWallet('MyWallet', 6)
 secondwallet = RubleWallet('OtherWallet', 220)
 thirdwallet = EuroWallet('AnotherWallet', 1)
-
-"""if EuroWallet('A', 2) == EuroWallet('B', 1) + 1:
-    print("Хайп")
-else:
-    print("Кринж")"""
-
