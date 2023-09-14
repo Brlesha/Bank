@@ -26,3 +26,4 @@ class table():
 #         table.write()
 
 a = input('Negro')
+''''''
