@@ -1,15 +1,18 @@
 class table():
     """Таблица типо ексель"""
-    def __init__(self, index, value):
+    def __init__(self, listing, index, value):
         """инициализация ячейки таблицы"""
         self.index = frozenset(index)
         self.value = value
 
+    def __str__(self):
+        return self.listing
+
     def write(self):
+        '''запись в ячейку'''
         line = input('введите номер строки')
-        print(type(line))
-            if line.type = 'inte'
-            cloumn = str(input('введите индекс столбца'))
+        cloumn = str(input('введите индекс столбца'))
+        data = input('Что записываем?')
 
 
     def __getitem__(self, item):
@@ -19,10 +22,11 @@ class table():
             return print('Эта ячейка пуста')
 
 
-action = 'запись'
-while action != 'Закончить':
-    action = input('введите дейтсвие: ')
-    if action == 'запись':
-        table.write()
+# action = 'запись'
+# while action != 'Закончить':
+#     action = input('введите дейтсвие: ')
+#     if action == 'запись':
+#         table.write()
 
-a = input('Negro')
+table =
+print(table)
